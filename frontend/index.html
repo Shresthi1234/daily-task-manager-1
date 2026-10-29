@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f7fb" />
+    <meta name="description" content="A simple daily task manager to plan your day." />
+    <title>Daily Task Manager</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Daily Task Manager home"><span class="brand-mark">✓</span> daylist</a>
+        <span class="top-note">A little progress, every day.</span>
+      </header>
+      <main class="layout">
+        <section class="intro">
+          <p class="eyebrow" id="today-label">YOUR DAY, YOUR PACE</p>
+          <h1>Make today<br /><span>count.</span></h1>
+          <p class="intro-copy">Clear your mind. Focus on what matters. One task at a time.</p>
+          <div class="progress-card">
+            <div class="progress-heading"><span>Today's progress</span><strong id="progress-percent">0%</strong></div>
+            <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+            <p id="progress-caption">Every completed task is a win.</p>
+          </div>
+        </section>
+        <section class="task-panel" aria-label="Task manager">
+          <div class="panel-heading"><div><p class="eyebrow">YOUR CHECKLIST</p><h2>Daily tasks</h2></div><span class="task-count" id="task-count">0 tasks</span></div>
+          <form id="task-form" class="task-form">
+            <label class="sr-only" for="task-title">Task title</label>
+            <input id="task-title" name="title" placeholder="What needs to get done?" maxlength="140" required />
+            <label class="sr-only" for="task-description">Description (optional)</label>
+            <input id="task-description" name="description" placeholder="Add a note (optional)" maxlength="500" />
+            <div class="form-bottom"><label class="date-label" for="task-date">Due date <input id="task-date" type="date" /></label><button class="add-button" type="submit">＋ Add task</button></div>
+          </form>
+          <div class="filters" role="group" aria-label="Filter tasks"><button class="filter active" data-filter="all" type="button">All</button><button class="filter" data-filter="pending" type="button">To do</button><button class="filter" data-filter="completed" type="button">Completed</button></div>
+          <div id="message" class="message" role="status" aria-live="polite"></div>
+          <div id="task-list" class="task-list"><div class="loading">Loading your tasks…</div></div>
+          <p class="footer-note">Small steps add up. Keep going ✦</p>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
